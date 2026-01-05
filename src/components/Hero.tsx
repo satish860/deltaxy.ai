@@ -1,13 +1,54 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // Normalize mouse position to -1 to 1 range
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Animated gradient orbs - contained in absolute wrapper */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="gradient-orb orb-purple w-[300px] h-[300px] md:w-[600px] md:h-[600px] -top-[100px] md:-top-[200px] -left-[100px] md:-left-[200px] opacity-60" />
-        <div className="gradient-orb orb-blue w-[250px] h-[250px] md:w-[500px] md:h-[500px] top-[20%] -right-[75px] md:-right-[150px] opacity-50" />
-        <div className="gradient-orb orb-violet w-[200px] h-[200px] md:w-[400px] md:h-[400px] bottom-[10%] left-[10%] md:left-[20%] opacity-40" />
+        {/* Purple orb wrapper */}
+        <div
+          className="absolute -top-[100px] md:-top-[200px] -left-[100px] md:-left-[200px] transition-transform duration-500 ease-out"
+          style={{
+            transform: `translate(${mousePosition.x * 40}px, ${mousePosition.y * 40}px)`,
+          }}
+        >
+          <div className="gradient-orb orb-purple w-[300px] h-[300px] md:w-[600px] md:h-[600px] opacity-60 relative" />
+        </div>
+        {/* Blue orb wrapper */}
+        <div
+          className="absolute top-[20%] -right-[75px] md:-right-[150px] transition-transform duration-500 ease-out"
+          style={{
+            transform: `translate(${mousePosition.x * -30}px, ${mousePosition.y * -30}px)`,
+          }}
+        >
+          <div className="gradient-orb orb-blue w-[250px] h-[250px] md:w-[500px] md:h-[500px] opacity-50 relative" />
+        </div>
+        {/* Violet orb wrapper */}
+        <div
+          className="absolute bottom-[10%] left-[10%] md:left-[20%] transition-transform duration-500 ease-out"
+          style={{
+            transform: `translate(${mousePosition.x * 25}px, ${mousePosition.y * 25}px)`,
+          }}
+        >
+          <div className="gradient-orb orb-violet w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-40 relative" />
+        </div>
       </div>
 
       {/* Grid pattern overlay */}
@@ -70,9 +111,9 @@ export function Hero() {
           </div>
           <div className="text-center">
             <div className="text-2xl md:text-4xl font-bold text-gradient">
-              6 wk
+              6 Weeks
             </div>
-            <div className="text-xs md:text-sm text-white/50 mt-1">Avg. Deployment</div>
+            <div className="text-xs md:text-sm text-white/50 mt-1">To Production</div>
           </div>
         </div>
       </div>
