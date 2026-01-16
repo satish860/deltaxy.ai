@@ -27,7 +27,7 @@ export function CTA() {
               <span>Book a Call</span>
             </Link>
             <a
-              href="mailto:hello@deltaxy.ai"
+              href="mailto:Satish@deltaxy.ai"
               className="btn-secondary text-lg"
             >
               Email Us

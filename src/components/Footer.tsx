@@ -66,10 +66,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hello@deltaxy.ai"
+                  href="mailto:Satish@deltaxy.ai"
                   className="text-sm text-white/60 hover:text-white transition-colors"
                 >
-                  hello@deltaxy.ai
+                  Satish@deltaxy.ai
                 </a>
               </li>
             </ul>

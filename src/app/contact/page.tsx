@@ -44,7 +44,7 @@ export default function ContactPage() {
             <div className="bg-[#1a1a1a] rounded-lg overflow-hidden">
               {/* Calendly inline widget - replace URL with actual Calendly */}
               <iframe
-                src="https://calendly.com/deltaxy/30min"
+                src="https://calendly.com/satish-deltaxy/30min"
                 width="100%"
                 height="700"
                 frameBorder="0"
@@ -61,10 +61,10 @@ export default function ContactPage() {
             <p className="text-white/60 mb-4">
               Reach us directly at{" "}
               <a
-                href="mailto:hello@deltaxy.ai"
+                href="mailto:Satish@deltaxy.ai"
                 className="text-gradient font-medium hover:opacity-80 transition-opacity"
               >
-                hello@deltaxy.ai
+                Satish@deltaxy.ai
               </a>
             </p>
             <p className="text-sm text-white/40">

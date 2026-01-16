@@ -19,13 +19,13 @@ export function Nav() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <Link
-            href="#case-studies"
+            href="/#case-studies"
             className="text-sm text-white/70 hover:text-white transition-colors"
           >
             Case Studies
           </Link>
           <Link
-            href="#how-we-work"
+            href="/#how-we-work"
             className="text-sm text-white/70 hover:text-white transition-colors"
           >
             How We Work
@@ -71,14 +71,14 @@ export function Nav() {
         <div className="md:hidden nav-blur border-t border-[#222]">
           <div className="px-6 py-4 flex flex-col gap-4">
             <Link
-              href="#case-studies"
+              href="/#case-studies"
               className="text-white/70 hover:text-white transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Case Studies
             </Link>
             <Link
-              href="#how-we-work"
+              href="/#how-we-work"
               className="text-white/70 hover:text-white transition-colors"
               onClick={() => setIsOpen(false)}
             >
