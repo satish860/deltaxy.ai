@@ -1,13 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree } from "next/font/google";
+import { Crimson_Text, Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const crimsonText = Crimson_Text({
+  variable: "--font-crimson-text",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -16,19 +23,22 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "DeltaXY | AI Agents for Document Intelligence",
-  description: "We build reliable AI agents that extract, learn, and deliver measurable outcomes across aviation, compliance, and legal domains.",
+  title: "DeltaXY — Document intelligence for regulated industries",
+  description:
+    "DeltaXY designs and implements document-heavy workflows for aviation, compliance, and other regulated environments — with measurable accuracy, reviewable outputs, and production delivery in weeks.",
   openGraph: {
-    title: "DeltaXY | AI Agents for Document Intelligence",
-    description: "We build reliable AI agents that extract, learn, and deliver measurable outcomes across aviation, compliance, and legal domains.",
+    title: "DeltaXY — Document intelligence for regulated industries",
+    description:
+      "DeltaXY designs and implements document-heavy workflows for aviation, compliance, and other regulated environments — with measurable accuracy, reviewable outputs, and production delivery in weeks.",
     url: "https://deltaxy.ai",
     siteName: "DeltaXY",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DeltaXY | AI Agents for Document Intelligence",
-    description: "We build reliable AI agents that extract, learn, and deliver measurable outcomes across aviation, compliance, and legal domains.",
+    title: "DeltaXY — Document intelligence for regulated industries",
+    description:
+      "DeltaXY designs and implements document-heavy workflows for aviation, compliance, and other regulated environments — with measurable accuracy, reviewable outputs, and production delivery in weeks.",
   },
 };
 
@@ -38,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${figtree.variable} antialiased`}>
+    <html lang="en">
+      <body className={`${inter.variable} ${crimsonText.variable} antialiased`}>
         <Nav />
         <main>{children}</main>
         <Footer />
