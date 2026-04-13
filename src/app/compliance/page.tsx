@@ -51,7 +51,6 @@ export default function ComplianceCaseStudy() {
         },
       }}
       ctaTitle="Facing regulatory complexity?"
-      accentColor="#814ac8"
     />
   );
 }

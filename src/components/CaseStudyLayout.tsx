@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Metadata } from "next";
 
-interface CaseStudyProps {
+interface CaseStudyLayoutProps {
   industry: string;
   client: string;
   title: string;
@@ -29,7 +28,6 @@ interface CaseStudyProps {
     };
   };
   ctaTitle: string;
-  accentColor: string;
 }
 
 export function CaseStudyLayout({
@@ -41,62 +39,81 @@ export function CaseStudyLayout({
   solution,
   results,
   ctaTitle,
-  accentColor,
-}: CaseStudyProps) {
+}: CaseStudyLayoutProps) {
   return (
-    <article className="pt-24">
-      {/* Hero */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Background */}
-        <div
-          className={`gradient-orb w-[600px] h-[600px] -top-[200px] -right-[200px] opacity-40`}
-          style={{
-            background: `linear-gradient(135deg, ${accentColor} 0%, #df7afe 100%)`,
-          }}
-        />
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+    <article className="bg-[var(--dxy-paper)] text-[var(--dxy-ink)]">
+      {/* ===== HERO ===== */}
+      <section className="pt-24 pb-16 sm:pt-28 sm:pb-20">
+        <div className="dxy-container">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm text-white/50 mb-8">
-            <Link href="/" className="hover:text-white transition-colors">
+          <nav className="flex items-center gap-2 text-sm text-[var(--dxy-muted)] mb-8">
+            <Link
+              href="/"
+              className="transition-colors hover:text-[var(--dxy-ink)]"
+            >
               Home
             </Link>
             <span>/</span>
             <Link
-              href="/#case-studies"
-              className="hover:text-white transition-colors"
+              href="/#industries"
+              className="transition-colors hover:text-[var(--dxy-ink)]"
             >
-              Case Studies
+              Industries
             </Link>
             <span>/</span>
-            <span className="text-white/70">{industry}</span>
+            <span className="text-[var(--dxy-ink)]/80">{industry}</span>
+          </nav>
+
+          <div className="max-w-[760px]">
+            {/* Badge + client */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--dxy-border)] bg-[var(--dxy-card)] mb-4">
+              <span className="text-sm text-[var(--dxy-muted)]">{industry}</span>
+            </div>
+            <p className="text-sm text-[var(--dxy-muted)] mb-4">{client}</p>
+
+            <h1
+              className={
+                "font-serif mt-2 text-[clamp(2rem,5.5vw,3.5rem)] leading-tight tracking-[-0.03em] text-[var(--dxy-ink)]"
+              }
+            >
+              {title}
+            </h1>
+            <p className="mt-4 text-base sm:text-lg leading-8 text-[var(--dxy-muted)] max-w-[620px]">
+              {subtitle}
+            </p>
           </div>
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#222] bg-[#0d0d0d]/80 mb-6">
-            <span className="text-sm text-white/70">{industry}</span>
+          {/* Metrics */}
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-[20px] border border-[var(--dxy-border)] bg-[var(--dxy-border)] max-w-[760px]">
+            {results.metrics.map((m) => (
+              <div
+                key={m.label}
+                className="bg-[var(--dxy-card)] px-5 py-5 text-center"
+              >
+                <div className="text-2xl sm:text-3xl font-semibold text-[var(--dxy-sage)]">
+                  {m.value}
+                </div>
+                <div className="mt-1 text-xs sm:text-sm text-[var(--dxy-muted)]">
+                  {m.label}
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Client */}
-          <p className="text-white/50 mb-4">{client}</p>
-
-          {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            {title}
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl text-white/70 max-w-2xl">{subtitle}</p>
         </div>
       </section>
 
-      {/* Challenge */}
-      <section className="py-16 border-t border-[#222]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-8">{challenge.title}</h2>
-          <div className="space-y-4">
+      {/* ===== CHALLENGE ===== */}
+      <section className="border-t border-[var(--dxy-border)]">
+        <div className="dxy-container py-12 sm:py-16">
+          <h2 className="font-serif text-[clamp(1.6rem,3.4vw,2.2rem)] leading-tight text-[var(--dxy-ink)] mb-8">
+            {challenge.title}
+          </h2>
+          <div className="max-w-[720px] space-y-5">
             {challenge.content.map((para, idx) => (
-              <p key={idx} className="text-white/70 leading-relaxed">
+              <p
+                key={idx}
+                className="text-[15px] sm:text-[16px] leading-7 sm:leading-8 text-[var(--dxy-muted)]"
+              >
                 {para}
               </p>
             ))}
@@ -104,19 +121,30 @@ export function CaseStudyLayout({
         </div>
       </section>
 
-      {/* Solution */}
-      <section className="py-16 border-t border-[#222]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-8">{solution.title}</h2>
-          <p className="text-white/70 leading-relaxed mb-8">{solution.content}</p>
+      {/* ===== SOLUTION ===== */}
+      <section className="border-t border-[var(--dxy-border)] bg-[var(--dxy-card)]/45">
+        <div className="dxy-container py-12 sm:py-16">
+          <h2 className="font-serif text-[clamp(1.6rem,3.4vw,2.2rem)] leading-tight text-[var(--dxy-ink)] mb-4">
+            {solution.title}
+          </h2>
+          <p className="text-[15px] sm:text-[16px] leading-7 sm:leading-8 text-[var(--dxy-muted)] max-w-[720px] mb-8 sm:mb-10">
+            {solution.content}
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {solution.features.map((feature) => (
-              <div key={feature.name} className="glass-card p-6">
-                <h3 className="text-lg font-semibold mb-3 text-gradient">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+            {solution.features.map((feature, idx) => (
+              <div
+                key={feature.name}
+                className={
+                  "dxy-card p-6 sm:p-7 border-t-[3px] border-t-[var(--dxy-sage)] dxy-stagger-item dxy-fade-up-" +
+                  Math.min(idx + 1, 4)
+                }
+                style={{ "--stagger-i": idx } as React.CSSProperties}
+              >
+                <h3 className="text-lg sm:text-xl font-semibold text-[var(--dxy-ink)] mb-3">
                   {feature.name}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-sm sm:text-[15px] leading-7 text-[var(--dxy-muted)]">
                   {feature.description}
                 </p>
               </div>
@@ -125,32 +153,36 @@ export function CaseStudyLayout({
         </div>
       </section>
 
-      {/* Results */}
-      <section className="py-16 border-t border-[#222]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-12">The Results</h2>
+      {/* ===== RESULTS ===== */}
+      <section className="border-t border-[var(--dxy-border)]">
+        <div className="dxy-container py-12 sm:py-16">
+          <h2 className="font-serif text-[clamp(1.6rem,3.4vw,2.2rem)] leading-tight text-[var(--dxy-ink)] mb-10">
+            The Results
+          </h2>
 
-          {/* Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {results.metrics.map((metric) => (
-              <div key={metric.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  {metric.value}
+          {/* Metrics (mobile) */}
+          <div className="grid grid-cols-2 gap-4 mb-10 sm:hidden">
+            {results.metrics.map((m) => (
+              <div key={m.label} className="dxy-card p-5 text-center">
+                <div className="text-2xl font-semibold text-[var(--dxy-sage)]">
+                  {m.value}
                 </div>
-                <div className="text-sm text-white/50">{metric.label}</div>
+                <div className="mt-1 text-sm text-[var(--dxy-muted)]">
+                  {m.label}
+                </div>
               </div>
             ))}
           </div>
 
           {/* Quote */}
           {results.quote && (
-            <blockquote className="glass-card p-8 border-l-4 border-[#814ac8]">
-              <p className="text-lg text-white/80 italic mb-4">
+            <blockquote className="dxy-card p-6 sm:p-8 border-l-[3px] border-l-[var(--dxy-sage)] max-w-[720px]">
+              <p className="text-base sm:text-lg leading-7 sm:leading-8 text-[var(--dxy-ink)] italic">
                 &quot;{results.quote.text}&quot;
               </p>
               {results.quote.author && (
-                <cite className="text-sm text-white/50 not-italic">
-                  - {results.quote.author}
+                <cite className="mt-4 block text-sm text-[var(--dxy-muted)] not-italic">
+                  — {results.quote.author}
                 </cite>
               )}
             </blockquote>
@@ -158,16 +190,28 @@ export function CaseStudyLayout({
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 border-t border-[#222]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold mb-6">{ctaTitle}</h2>
+      {/* ===== CTA ===== */}
+      <section className="border-t border-[var(--dxy-border)] bg-[var(--dxy-card)]/45">
+        <div className="dxy-container py-12 sm:py-16 text-center">
+          <h2 className="font-serif text-[clamp(1.8rem,4vw,3rem)] leading-tight text-[var(--dxy-ink)] mb-4">
+            {ctaTitle}
+          </h2>
+          <p className="mx-auto max-w-[560px] text-[15px] sm:text-[16px] leading-7 text-[var(--dxy-muted)] mb-8">
+            Let's discuss how we can apply similar automation to your document
+            workflows.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">
-              <span>Book a Call</span>
+            <Link
+              href="/contact"
+              className="dxy-button"
+            >
+              Request an Executive Working Session
             </Link>
-            <Link href="/#case-studies" className="btn-secondary">
-              View More Case Studies
+            <Link
+              href="/#industries"
+              className="dxy-inline-link inline-flex items-center justify-center"
+            >
+              Explore more industries
             </Link>
           </div>
         </div>

@@ -51,7 +51,6 @@ export default function AviationCaseStudy() {
         },
       }}
       ctaTitle="Have a similar challenge?"
-      accentColor="#3b82f6"
     />
   );
 }

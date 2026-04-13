@@ -56,7 +56,6 @@ export default function LegalCaseStudy() {
         },
       }}
       ctaTitle="Working with complex documents?"
-      accentColor="#ec4899"
     />
   );
 }
