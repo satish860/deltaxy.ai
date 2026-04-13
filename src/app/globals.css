@@ -235,6 +235,200 @@ section[id] {
   }
 }
 
+/* ===== Page-load Hero Stagger Animations ===== */
+@keyframes dxy-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dxy-fade-up-scale {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.dxy-fade-up {
+  opacity: 0;
+  animation: dxy-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.dxy-fade-up-1 { animation-delay: 0.05s; }
+.dxy-fade-up-2 { animation-delay: 0.12s; }
+.dxy-fade-up-3 { animation-delay: 0.2s; }
+.dxy-fade-up-4 { animation-delay: 0.3s; }
+.dxy-fade-up-5 { animation-delay: 0.4s; }
+.dxy-fade-up-6 { animation-delay: 0.5s; }
+
+.dxy-button.dxy-fade-up {
+  animation: dxy-fade-up-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== Scroll-reveal stagger items (IntersectionObserver) ===== */
+.dxy-stagger-item {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dxy-stagger-item.dxy-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Step connector line ===== */
+.dxy-steps-connector {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: var(--dxy-border);
+  z-index: 0;
+}
+.dxy-steps-connector::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 0;
+  background: var(--dxy-sage);
+  transition: height 0.1s linear;
+}
+
+/* ===== Button tactile feedback ===== */
+.dxy-button:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+
+/* ===== Card hover lift ===== */
+.dxy-card-interactive {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dxy-card-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(35, 33, 29, 0.06);
+}
+
+/* ===== Reduced Motion: disable all animations ===== */
+@media (prefers-reduced-motion: reduce) {
+  .dxy-fade-up,
+  .dxy-fade-up-1,
+  .dxy-fade-up-2,
+  .dxy-fade-up-3,
+  .dxy-fade-up-4,
+  .dxy-fade-up-5,
+  .dxy-fade-up-6,
+  .dxy-stagger-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .dxy-card-interactive:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .dxy-button:active {
+    transform: none;
+  }
+}
+
+/* ===== Page-load Hero Stagger Animations ===== *
+@keyframes dxy-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dxy-fade-up-scale {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.dxy-fade-up {
+  opacity: 0;
+  animation: dxy-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.dxy-fade-up-1 { animation-delay: 0.05s; }
+.dxy-fade-up-2 { animation-delay: 0.12s; }
+.dxy-fade-up-3 { animation-delay: 0.2s; }
+.dxy-fade-up-4 { animation-delay: 0.3s; }
+.dxy-fade-up-5 { animation-delay: 0.4s; }
+.dxy-fade-up-6 { animation-delay: 0.5s; }
+
+.dxy-button.dxy-fade-up {
+  animation: dxy-fade-up-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== Scroll-reveal stagger items (IntersectionObserver) ===== *
+.dxy-stagger-item {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dxy-stagger-item.dxy-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Step connector line ===== *
+.dxy-steps-connector {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: var(--dxy-border);
+  z-index: 0;
+}
+.dxy-steps-connector::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 0;
+  background: var(--dxy-sage);
+  transition: height 0.1s linear;
+}
+
+/* ===== Button tactile feedback ===== *
+.dxy-button:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+
+/* ===== Card hover lift ===== *
+.dxy-card-interactive {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dxy-card-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(35, 33, 29, 0.06);
+}
+
+/* ===== Reduced Motion: disable all animations ===== *
+@media (prefers-reduced-motion: reduce) {
+  .dxy-fade-up,
+  .dxy-fade-up-1,
+  .dxy-fade-up-2,
+  .dxy-fade-up-3,
+  .dxy-fade-up-4,
+  .dxy-fade-up-5,
+  .dxy-fade-up-6,
+  .dxy-stagger-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .dxy-card-interactive:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .dxy-button:active {
+    transform: none;
+  }
+}
+
 /* Legacy styles kept for non-home pages/components */
 @keyframes float-slow {
   0%,
