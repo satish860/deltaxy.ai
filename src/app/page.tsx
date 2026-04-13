@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const sampleDocsMailto =
-  "mailto:hello@deltaxy.ai?subject=3%20sample%20docs%20for%20DeltaXY&body=Hi%20DeltaXY%2C%0A%0AHere%20are%20our%203%20sample%20documents%20or%20workflow%20details%3A%0A%0A";
+const workingSessionMailto =
+  "mailto:satish@deltaxy.ai?subject=Executive%20Working%20Session%20%E2%80%94%20DeltaXY&body=Hi%2C%0A%0AI'd%20like%20to%20request%20an%20Executive%20Working%20Session%20with%20DeltaXY%20to%20discuss%20our%20document%20workflows.%0A%0A- Company%3A%0A- Workflow%20description%3A%0A- Preferred%20meeting%20time%3A%0A";
 
 const heroMetrics = [
   "95% extraction accuracy",
@@ -12,180 +12,138 @@ const heroMetrics = [
   "500+ DORA requirements mapped",
 ];
 
-const problems = [
-  {
-    title: "Manual review keeps expanding",
-    body: "Teams lose hours extracting, checking, reformatting, and comparing information across PDFs, Excel files, and email-driven processes.",
-  },
-  {
-    title: "Accuracy claims hide the real risk",
-    body: "A clean sample is not production. Real workflows break on edge cases, inconsistent formats, and the few fields that matter most.",
-  },
-  {
-    title: "Generic AI tools create new uncertainty",
-    body: "In regulated environments, speed alone is not enough. Teams need outputs they can verify, explain, and trust.",
-  },
+const fitBullets = [
+  "High-volume document operations",
+  "High cost of errors (financial, regulatory, reputational)",
+  "Fragmented review workflows across email, spreadsheets, and systems",
+  "Pressure to move from pilot to production quickly",
+];
+
+const outcomes = [
+  "Extraction and decision accuracy",
+  "Lower manual review effort",
+  "Faster turnaround for document-driven processes",
+  "Audit-ready evidence trails and controls",
+  "Production workflows integrated into existing systems",
 ];
 
 const services = [
   {
-    title: "Workflow diagnostic",
-    body: "We review one high-friction workflow and identify where time, errors, and rework are actually happening.",
-    label: "Includes",
+    number: "01",
+    title: "10-Day Document Accuracy Audit",
+    body: "We assess one high-friction document workflow and deliver a precise report on accuracy gaps, time leakage, and what a production-ready system would require.",
+    label: "What we deliver",
     items: [
-      "workflow mapping",
-      "bottleneck analysis",
-      "automation fit assessment",
-      "pilot recommendation",
+      "workflow mapping & time analysis",
+      "accuracy baseline & gap report",
+      "edge case inventory",
+      "production readiness assessment",
     ],
-    cta: { label: "Request a diagnostic", href: "/contact" },
+    cta: { label: "Discuss this engagement", href: "/contact" },
   },
   {
-    title: "3-file pilot",
-    body: "Send 3 sanitized files. We return structured output, highlight edge cases, and show what a production workflow would require.",
-    label: "Includes",
+    number: "02",
+    title: "30-Day Workflow Automation Sprint",
+    body: "We build and validate a working automation for one workflow — including review steps, structured outputs, and measurable KPIs.",
+    label: "What we ship",
     items: [
-      "sample extraction output",
-      "reviewability notes",
-      "edge case observations",
-      "implementation recommendation",
+      "working automation prototype",
+      "reviewable outputs with confidence scores",
+      "error analysis & remediation guide",
+      "KPI baseline & target metrics",
     ],
-    cta: { label: "Send 3 sample docs", href: sampleDocsMailto },
+    cta: { label: "Discuss this engagement", href: "/contact" },
   },
   {
-    title: "Production implementation",
-    body: "For workflows that prove out, we build production-grade systems with review steps, structured outputs, and clear operational logic.",
-    label: "Typical outputs",
+    number: "03",
+    title: "6-Week Production Rollout",
+    body: "For proven workflows, we implement a production-grade system — reviewed, auditable, and integrated into your existing tools and processes.",
+    label: "What we implement",
     items: [
-      "structured extraction",
-      "Excel / CSV outputs",
-      "review workflows",
-      "confidence-based triage",
-      "source traceability",
+      "production-grade automation",
+      "human review & triage workflows",
+      "source traceability & audit trails",
+      "team training & operational handoff",
     ],
-    cta: { label: "Discuss an implementation", href: "/contact" },
-  },
-];
-
-const industries = [
-  {
-    title: "Aviation leasing",
-    body: "Lease abstraction, portfolio review, technical records processing, lifecycle workflows, and document operations that cannot afford guesswork.",
-  },
-  {
-    title: "Compliance and regulatory operations",
-    body: "Requirement mapping, evidence extraction, policy review, control documentation, and document-to-framework workflows.",
-  },
-  {
-    title: "Audit-style review workflows",
-    body: "Sensitive-file processing, evidence extraction, spreadsheet-ready outputs, and review support for repetitive document-heavy checks.",
-  },
-];
-
-const whyDeltaxy = [
-  {
-    title: "Reviewable by design",
-    body: "Outputs are built for human review, not blind trust.",
-  },
-  {
-    title: "Built for regulated work",
-    body: "Sensitive files, traceability, and operational accountability are part of the design, not afterthoughts.",
-  },
-  {
-    title: "Production-first thinking",
-    body: "We optimize for what survives real workflows, not what looks impressive in a demo.",
-  },
-  {
-    title: "Senior, direct execution",
-    body: "Small team. Fast iteration. No layers between the problem and the people building the solution.",
+    cta: { label: "Discuss this engagement", href: "/contact" },
   },
 ];
 
 const steps = [
   {
-    title: "Share a sample",
-    body: "You send representative files or describe the workflow.",
+    title: "Executive Intake",
+    body: "Define business objective, risk constraints, and success metrics directly with DeltaXY leadership.",
   },
   {
-    title: "We assess fit",
-    body: "We identify what can be extracted reliably, where review belongs, and whether the workflow is worth automating.",
+    title: "Proof",
+    body: "We assess your workflow and return a measurable proof of what can be automated — and what can't.",
   },
   {
-    title: "Run a pilot",
-    body: "We return sample output and show where the approach works — and where it doesn’t.",
+    title: "Decision",
+    body: "You decide whether to proceed based on clear evidence, not a pitch.",
   },
   {
-    title: "Productionize when ready",
-    body: "If the workflow proves out, we implement it with review logic, structured outputs, and measurable performance.",
+    title: "Scale",
+    body: "We implement and integrate the workflow into production with measurable KPIs and operational handoff.",
   },
 ];
 
-const partnerBullets = [
-  "start with a small fixed-fee pilot",
-  "white-label or subcontract delivery",
-  "built for sensitive, review-heavy work",
-  "useful where PDFs and spreadsheets dominate the process",
-];
-
-const faqs = [
-  {
-    question: "Do we need to upload files to a public AI tool?",
-    answer:
-      "No. Sensitive-file handling should be designed around the workflow and the buyer’s constraints.",
-  },
-  {
-    question: "Do you sell software or services?",
-    answer:
-      "We lead with implementation and workflow outcomes. Productized components may sit behind the system, but the commercial focus is on results.",
-  },
-  {
-    question: "What kinds of documents do you handle?",
-    answer:
-      "Typically PDFs and semi-structured documents that feed into operational systems, Excel outputs, or review workflows.",
-  },
-  {
-    question: "How do we know if our workflow is a fit?",
-    answer:
-      "Start with a sample-pack pilot. We’ll tell you quickly what works, where review is needed, and whether the workflow is worth implementing.",
-  },
-  {
-    question: "How fast can this go live?",
-    answer:
-      "A small pilot can start quickly. Production timelines depend on workflow complexity, but our bias is always fast validation before larger implementation.",
-  },
+const whyDeltaxyBullets = [
+  "Outcome Engineering discipline, not ad-hoc automation",
+  "Production-first execution with measurable KPIs",
+  "Designed for regulated environments where errors are expensive",
+  "Built to be auditable, maintainable, and operationally adopted",
 ];
 
 export const metadata: Metadata = {
-  title: "DeltaXY — Document intelligence for regulated industries",
+  title: "DeltaXY — Outcome Engineering for Document-Heavy Operations",
   description:
     "DeltaXY designs and implements document-heavy workflows for aviation, compliance, and other regulated environments — with measurable accuracy, reviewable outputs, and production delivery in weeks.",
+  openGraph: {
+    title: "DeltaXY — Outcome Engineering for Document-Heavy Operations",
+    description:
+      "DeltaXY designs and implements document-heavy workflows for aviation, compliance, and other regulated environments — with measurable accuracy, reviewable outputs, and production delivery in weeks.",
+    url: "https://deltaxy.ai",
+    siteName: "DeltaXY",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DeltaXY — Outcome Engineering for Document-Heavy Operations",
+    description:
+      "DeltaXY designs and implements document-heavy workflows for aviation, compliance, and other regulated environments — with measurable accuracy, reviewable outputs, and production delivery in weeks.",
+  },
 };
 
 export default function Home() {
   return (
     <div className="home-shell">
+      {/* ===== 1. HERO ===== */}
       <section className="dxy-hero">
         <div className="dxy-container">
           <div className="mx-auto max-w-[760px] text-center">
-            <p className="dxy-eyebrow mx-auto">Document intelligence for regulated work</p>
             <h1 className="dxy-display mt-6">
-              Document workflows that feel under control
+              Outcome Engineering for Regulated, Document-Heavy Operations
             </h1>
             <p className="dxy-lead mt-6">
-              DeltaXY designs and implements document-heavy workflows for aviation,
-              compliance, and other review-heavy operations — with measurable
-              accuracy, reviewable outputs, and production delivery in weeks.
+              Most enterprise AI efforts fail in production — not because models
+              are weak, but because workflows are not engineered for accuracy,
+              controls, and adoption.
             </p>
 
             <div className="mt-10">
-              <a href={sampleDocsMailto} className="dxy-button" aria-label="Send 3 sample docs by email">
-                Send 3 sample docs
+              <a
+                href={workingSessionMailto}
+                className="dxy-button"
+                aria-label="Request an Executive Working Session by email"
+              >
+                Request an Executive Working Session
               </a>
             </div>
 
             <p className="mx-auto mt-5 max-w-[620px] text-sm leading-7 text-[color:var(--dxy-muted)] sm:text-[15px]">
-              Sanitized files are fine. We’ll show what can be extracted, where
-              review is needed, and what production would require.
+              You'll meet directly with DeltaXY leadership. No generic sales
+              process.
             </p>
           </div>
 
@@ -202,249 +160,206 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/65">
+      {/* ===== 2. WHO THIS IS FOR ===== */}
+      <section className="border-t border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/65">
         <div className="dxy-container py-10 text-center">
           <h2 className="font-serif text-[clamp(1.6rem,3.4vw,2.35rem)] leading-tight text-[color:var(--dxy-ink)]">
-            Built on real workflows, not demo-ware
+            Built for Heads of Advisory, Compliance, Operations, Data, and AI
           </h2>
-          <p className="mx-auto mt-4 max-w-[760px] text-base leading-8 text-[color:var(--dxy-muted)] sm:text-lg">
-            DeltaXY works where the documents are messy, the review burden is
-            real, and blind trust is not an option. Our systems are designed for
-            human review, operational clarity, and measurable performance.
-          </p>
-          <p className="mt-4 text-sm text-[color:var(--dxy-muted)]">
-            Prefer to read first?{" "}
-            <Link href="/blog" className="dxy-inline-link align-baseline">
-              Visit the blog
-            </Link>
+          <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-[color:var(--dxy-muted)] sm:text-lg">
+            Who own outcomes, budgets, and risk.
           </p>
         </div>
-      </section>
-
-      <section id="about" className="dxy-section">
-        <div className="dxy-container">
-          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-            <div>
-              <p className="dxy-kicker">Why most document AI disappoints</p>
-              <h2 className="dxy-heading mt-4">
-                The problem is rarely reading the file. The problem is surviving
-                the workflow.
-              </h2>
-            </div>
-            <p className="dxy-lead max-w-none text-left text-[17px] leading-8 text-[color:var(--dxy-muted)] sm:text-[19px]">
-              Most teams already know AI can extract something from a PDF. What
-              usually fails is everything around it — review, exceptions,
-              spreadsheet outputs, source traceability, and the confidence to use
-              the result in real work.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {problems.map((problem) => (
-              <article key={problem.title} className="dxy-card p-7 sm:p-8">
-                <p className="text-sm text-[color:var(--dxy-accent)]">Problem</p>
-                <h3 className="mt-3 font-serif text-[1.8rem] leading-tight text-[color:var(--dxy-ink)]">
-                  {problem.title}
-                </h3>
-                <p className="mt-4 text-[15px] leading-7 text-[color:var(--dxy-muted)] sm:text-base">
-                  {problem.body}
-                </p>
-              </article>
+        <div className="dxy-container pb-10">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {fitBullets.map((bullet) => (
+              <div
+                key={bullet}
+                className="dxy-card flex items-start gap-3 p-5"
+              >
+                <svg className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--dxy-sage)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[15px] leading-7 text-[color:var(--dxy-muted)]">
+                  {bullet}
+                </span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="solutions" className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45">
+      {/* ===== 3. LOGOS ===== */}
+      <section className="border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-paper)]">
+        <div className="dxy-container py-10 text-center">
+          <p className="text-sm uppercase tracking-[0.15em] text-[color:var(--dxy-muted)]">
+            Trusted by industry leaders
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 sm:gap-x-16">
+            <img
+              src="/logos/gt-logo.svg"
+              alt="Grant Thornton"
+              className="h-8 w-auto opacity-60 transition-opacity duration-200 hover:opacity-100"
+            />
+            <img
+              src="/logos/agami-logo.svg"
+              alt="Agami"
+              className="h-7 w-auto opacity-60 transition-opacity duration-200 hover:opacity-100"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 4. OUTCOMES THAT MATTER ===== */}
+      <section id="outcomes" className="dxy-section">
         <div className="dxy-container">
           <div className="max-w-[760px]">
-            <p className="dxy-kicker">What we do</p>
+            <p className="dxy-kicker">Outcomes that matter</p>
             <h2 className="dxy-heading mt-4">
-              We implement document workflows, not AI theatre
+              Higher accuracy. Lower effort. Faster turnaround. Audit-ready.
             </h2>
-            <p className="mt-5 text-[17px] leading-8 text-[color:var(--dxy-muted)] sm:text-lg">
-              We take one document-heavy process, make it measurable, reduce the
-              manual burden, and build a workflow your team can actually use.
-            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-1">
+            {outcomes.map((item) => (
+              <div
+                key={item}
+                className="dxy-card flex items-center gap-4 p-6 sm:p-7"
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[color:var(--dxy-border)] bg-[color:var(--dxy-paper)]">
+                  <svg className="h-5 w-5 text-[color:var(--dxy-sage)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-[17px] leading-7 text-[color:var(--dxy-ink)]">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 5. SERVICE OFFERS ===== */}
+      <section id="services" className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45">
+        <div className="dxy-container">
+          <div className="max-w-[760px]">
+            <p className="dxy-kicker">Service offers</p>
+            <h2 className="dxy-heading mt-4">
+              Three engagement tiers, each with measurable deliverables
+            </h2>
           </div>
 
           <div className="mt-12 space-y-6">
-            {services.map((service, index) => {
-              const linkClass =
-                service.cta.href.startsWith("mailto:") || service.cta.href.startsWith("http")
-                  ? "inline-flex"
-                  : "inline-flex";
+            {services.map((service) => (
+              <article key={service.title} className="dxy-card p-7 sm:p-10">
+                <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
+                  <div>
+                    <p className="text-sm text-[color:var(--dxy-accent)]">
+                      {service.number}
+                    </p>
+                    <h3 className="mt-3 font-serif text-[2rem] leading-tight text-[color:var(--dxy-ink)] sm:text-[2.2rem]">
+                      {service.title}
+                    </h3>
+                    <Link
+                      href={service.cta.href}
+                      className="inline-flex dxy-inline-link mt-6"
+                    >
+                      {service.cta.label}
+                    </Link>
+                  </div>
 
-              return (
-                <article key={service.title} className="dxy-card p-7 sm:p-10">
-                  <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
-                    <div>
-                      <p className="text-sm text-[color:var(--dxy-accent)]">
-                        0{index + 1}
+                  <div>
+                    <p className="text-[16px] leading-8 text-[color:var(--dxy-muted)] sm:text-[17px]">
+                      {service.body}
+                    </p>
+                    <div className="mt-6 border-t border-[color:var(--dxy-border)] pt-5">
+                      <p className="text-sm text-[color:var(--dxy-ink)]/72">
+                        {service.label}
                       </p>
-                      <h3 className="mt-3 font-serif text-[2rem] leading-tight text-[color:var(--dxy-ink)] sm:text-[2.2rem]">
-                        {service.title}
-                      </h3>
-                      {service.cta.href.startsWith("mailto:") ? (
-                        <a href={service.cta.href} className={`${linkClass} dxy-inline-link mt-6`}>
-                          {service.cta.label}
-                        </a>
-                      ) : (
-                        <Link href={service.cta.href} className={`${linkClass} dxy-inline-link mt-6`}>
-                          {service.cta.label}
-                        </Link>
-                      )}
-                    </div>
-
-                    <div>
-                      <p className="text-[16px] leading-8 text-[color:var(--dxy-muted)] sm:text-[17px]">
-                        {service.body}
-                      </p>
-                      <div className="mt-6 border-t border-[color:var(--dxy-border)] pt-5">
-                        <p className="text-sm text-[color:var(--dxy-ink)]/72">
-                          {service.label}
-                        </p>
-                        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                          {service.items.map((item) => (
-                            <li
-                              key={item}
-                              className="rounded-xl border border-[color:var(--dxy-border)] bg-[color:var(--dxy-paper)] px-4 py-3 text-sm leading-6 text-[color:var(--dxy-muted)]"
-                            >
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                        {service.items.map((item) => (
+                          <li
+                            key={item}
+                            className="rounded-xl border border-[color:var(--dxy-border)] bg-[color:var(--dxy-paper)] px-4 py-3 text-sm leading-6 text-[color:var(--dxy-muted)]"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="industries" className="dxy-section">
-        <div className="dxy-container">
-          <div className="max-w-[720px]">
-            <p className="dxy-kicker">Where we work</p>
-            <h2 className="dxy-heading mt-4">
-              Built for regulated, document-heavy environments
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {industries.map((industry) => (
-              <article key={industry.title} className="dxy-card min-h-[260px] p-7 sm:p-8">
-                <h3 className="font-serif text-[1.85rem] leading-tight text-[color:var(--dxy-ink)]">
-                  {industry.title}
-                </h3>
-                <p className="mt-5 text-[15px] leading-7 text-[color:var(--dxy-muted)] sm:text-base">
-                  {industry.body}
-                </p>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="proof" className="dxy-section border-y border-[color:var(--dxy-border)] bg-[#f4efe8]">
+      {/* ===== 6. TESTIMONIALS ===== */}
+      <section className="dxy-section">
         <div className="dxy-container">
           <div className="max-w-[720px]">
-            <p className="dxy-kicker">Proof</p>
-            <h2 className="dxy-heading mt-4">Outcomes from production</h2>
+            <p className="dxy-kicker">Client stories</p>
+            <h2 className="dxy-heading mt-4">What our clients say</h2>
           </div>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-[1.45fr_0.95fr]">
-            <article className="dxy-card p-7 sm:p-10">
-              <p className="text-sm text-[color:var(--dxy-accent)]">Aviation document workflow</p>
-              <div className="mt-5 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-                <div>
-                  <h3 className="font-serif text-[clamp(2.2rem,5vw,4rem)] leading-none text-[color:var(--dxy-ink)]">
-                    95% extraction accuracy
-                  </h3>
-                  <p className="mt-6 text-[16px] leading-8 text-[color:var(--dxy-muted)] sm:text-[17px]">
-                    DeltaXY built a production workflow for aviation leasing
-                    operations, turning repeated extraction and review into a
-                    structured process with human-verifiable outputs.
-                  </p>
-                  <Link href="/aviation" className="dxy-inline-link mt-8 inline-flex">
-                    See proof
-                  </Link>
-                </div>
-
-                <div className="grid gap-px overflow-hidden rounded-[18px] border border-[color:var(--dxy-border)] bg-[color:var(--dxy-border)] sm:grid-cols-2 lg:grid-cols-1">
-                  {[
-                    "40+ hours saved per week",
-                    "200+ documents processed per month",
-                    "Delivered in 6 weeks",
-                    "Human-verifiable outputs",
-                  ].map((item) => (
-                    <div key={item} className="bg-[color:var(--dxy-card)] px-5 py-5 text-sm leading-6 text-[color:var(--dxy-ink)]/84">
-                      {item}
-                    </div>
-                  ))}
-                </div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+            <article className="dxy-card p-8 sm:p-10">
+              <svg className="h-10 w-10 text-[color:var(--dxy-sage)]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.98v10h-9.98z" />
+              </svg>
+              <blockquote className="mt-6 text-[17px] leading-8 text-[color:var(--dxy-ink)] sm:text-[18px]">
+                We partnered with Vedhverse on an automated processing tool
+                for aircraft utilisation reports. From the beginning, they
+                impressed us with their professionalism, speed and problem
+                solving capabilities. The solution they delivered has
+                streamlined our process and driven efficiencies.
+              </blockquote>
+              <blockquote className="mt-4 text-[17px] leading-8 text-[color:var(--dxy-ink)] sm:text-[18px]">
+                What stood out the most was their deep technical expertise,
+                clear communication and responsiveness. We would highly
+                recommend them to any organization looking for reliable
+                AI-driven solutions.
+              </blockquote>
+              <div className="mt-8 border-t border-[color:var(--dxy-border)] pt-6">
+                <p className="text-sm font-semibold text-[color:var(--dxy-ink)]">
+                  Liam Gleeson
+                </p>
+                <p className="text-sm text-[color:var(--dxy-muted)]">
+                  Director — Aviation Advisory, Grant Thornton Ireland
+                </p>
               </div>
             </article>
 
-            <div className="grid gap-6">
-              <article className="dxy-card p-7 sm:p-8">
-                <p className="text-sm text-[color:var(--dxy-accent)]">Regulatory mapping</p>
-                <h3 className="mt-4 font-serif text-[2.25rem] leading-tight text-[color:var(--dxy-ink)]">
-                  500+ DORA requirements mapped
-                </h3>
-                <p className="mt-4 text-[15px] leading-7 text-[color:var(--dxy-muted)] sm:text-base">
-                  Structured regulatory requirements extracted, assessed, and
-                  organized into reviewable workflows for compliance teams.
+            <div className="space-y-6">
+              <div className="dxy-card p-7">
+                <p className="text-2xl font-semibold text-[color:var(--dxy-sage)]">
+                  Professionalism + Speed
                 </p>
-              </article>
-
-              <article className="dxy-card p-7 sm:p-8">
-                <p className="text-sm text-[color:var(--dxy-accent)]">Production experience</p>
-                <h3 className="mt-4 font-serif text-[2.25rem] leading-tight text-[color:var(--dxy-ink)]">
-                  10,000+ total documents processed
-                </h3>
-                <p className="mt-4 text-[15px] leading-7 text-[color:var(--dxy-muted)] sm:text-base">
-                  Across aviation, legal, and regulatory work — not in a lab, in
-                  live operational settings.
+              </div>
+              <div className="dxy-card p-7">
+                <p className="text-2xl font-semibold text-[color:var(--dxy-sage)]">
+                  Deep Technical Expertise
                 </p>
-              </article>
+              </div>
+              <div className="dxy-card p-7">
+                <p className="text-2xl font-semibold text-[color:var(--dxy-sage)]">
+                  Clear Communication
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="dxy-section">
-        <div className="dxy-container">
-          <div className="max-w-[780px]">
-            <p className="dxy-kicker">Why DeltaXY</p>
-            <h2 className="dxy-heading mt-4">
-              Calm systems. Clear outputs. Nothing important hidden.
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {whyDeltaxy.map((item) => (
-              <article key={item.title} className="dxy-card p-7 sm:p-8">
-                <h3 className="font-serif text-[1.8rem] leading-tight text-[color:var(--dxy-ink)]">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-[15px] leading-7 text-[color:var(--dxy-muted)] sm:text-base">
-                  {item.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45">
+            {/* ===== 7. HOW IT WORKS ===== */}
+      <section id="how-it-works" className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45">
         <div className="dxy-container">
           <div className="max-w-[720px]">
             <p className="dxy-kicker">How engagement works</p>
             <h2 className="dxy-heading mt-4">
-              Start small. Prove the workflow. Then decide.
+              Start with a working session. Prove the workflow. Then decide.
             </h2>
           </div>
 
@@ -463,96 +378,90 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10">
-            <a href={sampleDocsMailto} className="dxy-inline-link inline-flex">
-              Start with 3 sample docs
-            </a>
+      {/* ===== 8. DELIVERY MODEL ===== */}
+      <section className="dxy-section">
+        <div className="dxy-container">
+          <div className="max-w-[720px] text-center mx-auto">
+            <p className="dxy-kicker">Delivery model</p>
+            <h2 className="dxy-heading mt-4">
+              Focused team, direct delivery
+            </h2>
+            <p className="mt-5 max-w-[600px] mx-auto text-[17px] leading-8 text-[color:var(--dxy-muted)] sm:text-lg">
+              You work with a focused DeltaXY team that combines document AI
+              engineering, workflow design, and domain-aware validation.
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="partners" className="dxy-section">
+      {/* ===== 9. WHY DELTAXY ===== */}
+      <section id="why-deltaxy" className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/65">
         <div className="dxy-container">
-          <div className="overflow-hidden rounded-[28px] border border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)] shadow-[0_8px_24px_rgba(58,53,48,0.04)]">
-            <div className="grid gap-10 px-7 py-8 sm:px-10 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12 lg:py-12">
-              <div>
-                <p className="dxy-kicker">For partners</p>
-                <h2 className="dxy-heading mt-4 max-w-[580px]">
-                  Offer document AI capability without building an internal AI team
-                </h2>
-                <p className="mt-5 text-[16px] leading-8 text-[color:var(--dxy-muted)] sm:text-[17px]">
-                  DeltaXY works with advisory, audit, and consulting partners on
-                  a white-label or subcontract basis. You keep the client
-                  relationship. We handle the workflow implementation behind the
-                  scenes.
-                </p>
-                <Link href="/contact" className="dxy-button mt-8 inline-flex">
-                  Partner with DeltaXY
-                </Link>
-              </div>
-
-              <div className="grid gap-3 self-end">
-                {partnerBullets.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-[color:var(--dxy-border)] bg-[color:var(--dxy-paper)] px-5 py-4 text-[15px] leading-7 text-[color:var(--dxy-muted)]"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45">
-        <div className="dxy-container">
-          <div className="max-w-[720px]">
-            <p className="dxy-kicker">FAQ</p>
-            <h2 className="dxy-heading mt-4">Common questions, answered clearly.</h2>
+          <div className="max-w-[820px]">
+            <p className="dxy-kicker">Why DeltaXY</p>
+            <h2 className="dxy-heading mt-4">
+              Most vendors optimize model output. We optimize business outcomes.
+            </h2>
           </div>
 
-          <div className="mt-10 rounded-[24px] border border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]">
-            {faqs.map((item, index) => (
-              <details
-                key={item.question}
-                className="dxy-faq"
-                open={index === 0}
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {whyDeltaxyBullets.map((bullet) => (
+              <div
+                key={bullet}
+                className="dxy-card flex items-start gap-4 p-6"
               >
-                <summary>
-                  <span>{item.question}</span>
-                  <span className="text-[color:var(--dxy-accent)]">+</span>
-                </summary>
-                <div className="faq-answer">
-                  <p>{item.answer}</p>
-                </div>
-              </details>
+                <svg className="mt-1 h-5 w-5 shrink-0 text-[color:var(--dxy-sage)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[16px] leading-7 text-[color:var(--dxy-ink)]">
+                  {bullet}
+                </span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="dxy-section">
+      {/* ===== 10. COMMERCIAL PRINCIPLE ===== */}
+      <section className="dxy-section">
+        <div className="dxy-container">
+          <div className="mx-auto max-w-[760px] text-center">
+            <h2 className="font-serif text-[clamp(2rem,4vw,3.25rem)] leading-[1.05] text-[color:var(--dxy-ink)]">
+              Earned Expansion
+            </h2>
+            <p className="mx-auto mt-5 max-w-[580px] text-[17px] leading-8 text-[color:var(--dxy-muted)] sm:text-lg">
+              We scale only when outcomes are measured and verified. If we do
+              not create measurable value, you should not continue.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 11. BOOK A MEETING (FINAL CTA) ===== */}
+      <section id="contact" className="dxy-section border-t border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45">
         <div className="dxy-container">
           <div className="mx-auto max-w-[880px] rounded-[28px] border border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)] px-7 py-10 text-center shadow-[0_8px_24px_rgba(58,53,48,0.04)] sm:px-12 sm:py-14">
             <h2 className="font-serif text-[clamp(2.2rem,4.5vw,4.25rem)] leading-[0.98] text-[color:var(--dxy-ink)]">
-              If your team is buried in documents, start with 3 sample files
+              Tell us about your document workflows, constraints, and goals
             </h2>
             <p className="mx-auto mt-5 max-w-[620px] text-[16px] leading-8 text-[color:var(--dxy-muted)] sm:text-[18px]">
-              We’ll show what can be extracted, what needs review, and whether
-              the workflow is worth implementing.
+              We'll recommend the fastest path to measurable outcomes.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a href={sampleDocsMailto} className="dxy-button">
-                Send 3 sample docs
+              <a href={workingSessionMailto} className="dxy-button">
+                Request an Executive Working Session
               </a>
               <p className="text-sm text-[color:var(--dxy-muted)]">
-                Prefer to talk first?{" "}
-                <Link href="/contact" className="dxy-inline-link align-baseline">
-                  Contact us
-                </Link>
+                or email:{" "}
+                <a
+                  href="mailto:satish@deltaxy.ai"
+                  className="dxy-inline-link"
+                >
+                  satish@deltaxy.ai
+                </a>
               </p>
             </div>
           </div>
