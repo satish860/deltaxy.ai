@@ -42,15 +42,13 @@ function StaggerGrid({
 }) {
   const ref = wrap ? useStaggerObserver() : null;
   return wrap ? (
-    <div ref={ref} className={className}>
-      {children}
-    </div>
+    <div ref={ref} className={className}>{children}</div>
   ) : (
     <div className={className}>{children}</div>
   );
 }
 
-/* ── Data ──────────────────────────────────────────────── */
+/* ── Data ──────────────────────────────────────────────────────────── */
 const heroMetrics = [
   "95% extraction accuracy",
   "40+ hours saved per week",
@@ -135,17 +133,56 @@ const steps = [
   },
 ];
 
+const industries = [
+  {
+    href: "/aviation",
+    title: "Aviation",
+    description: "Aircraft leasing, airworthiness, MRO, and utilisation reporting with audit-grade precision.",
+    icon: (
+      <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path d="M4 20 L14 8 L16 12 L28 10 L20 22 L16 18 L8 26 Z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    href: "/compliance",
+    title: "Compliance",
+    description: "Regulatory filings, risk assessments, and policy mapping with zero missed edge cases.",
+    icon: (
+      <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <rect x="5" y="3" width="22" height="26" rx="3" />
+        <path d="M11 13 L14 17 L21 10" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    href: "/legal",
+    title: "Legal",
+    description: "Contract review, clause extraction, and due diligence at scale with human-in-the-loop oversight.",
+    icon: (
+      <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path d="M16 4 L20 8 L19 28 L13 28 L12 8 Z" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="16" cy="4" r="3" />
+        <path d="M13 18 L19 18" />
+      </svg>
+    ),
+  },
+];
+
 const whyDeltaxyBullets = [
   "Outcome Engineering discipline, not ad-hoc automation",
   "Production-first execution with measurable KPIs",
   "Designed for regulated environments where errors are expensive",
   "Built to be auditable, maintainable, and operationally adopted",
+  "Focused team, direct delivery — no junior handoffs or bloated account management",
+  "Earned expansion model: we scale only when outcomes are measured and verified",
 ];
 
-/* ── Page content ──────────────────────────────────────── */
+/* ── Page content ──────────────────────────────────────────────────── */
 export function HomeBody() {
   const outcomesRef = useStaggerObserver();
   const stepsRef = useStaggerObserver();
+  const industriesRef = useStaggerObserver();
   const whyRef = useStaggerObserver();
 
   return (
@@ -224,11 +261,7 @@ export function HomeBody() {
                   stroke="currentColor"
                   strokeWidth={2}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-[15px] leading-7 text-[color:var(--dxy-muted)]">
                   {bullet}
@@ -260,13 +293,58 @@ export function HomeBody() {
         </div>
       </section>
 
-      {/* ===== 4. OUTCOMES THAT MATTER ===== */}
+      {/* ===== 4. WHO WE SERVE (INDUSTRIES) ===== */}
+      <section id="industries" className="dxy-section border-b border-[color:var(--dxy-border)]">
+        <div className="dxy-container">
+          <div className="max-w-[720px]">
+            <p className="dxy-kicker">Who we serve</p>
+            <h2 className="dxy-heading mt-4">
+              AI-powered workflows, built for your industry
+            </h2>
+            <p className="mt-4 text-[17px] leading-8 text-[color:var(--dxy-muted)]">
+              Every domain has its own edge cases, compliance standards, and
+              failure modes. We build deep domain-aware automations — not
+              generic templates.
+            </p>
+          </div>
+
+          <div
+            ref={industriesRef}
+            className="mt-10 dxy-stagger grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {industries.map((ind, i) => (
+              <Link
+                key={ind.href}
+                href={ind.href}
+                className={
+                  "dxy-card dxy-stagger-item dxy-card-interactive flex flex-col p-7 dxy-fade-up-" +
+                  Math.min(i + 1, 3)
+                }
+              >
+                <div className="text-[color:var(--dxy-sage)]">{ind.icon}</div>
+                <h3 className="mt-4 font-serif text-[1.45rem] leading-tight text-[color:var(--dxy-ink)]">
+                  {ind.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-7 text-[color:var(--dxy-muted)]">
+                  {ind.description}
+                </p>
+                <span className="mt-5 text-sm font-medium text-[color:var(--dxy-sage)]">
+                  Explore {ind.title} →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 5. OUTCOMES THAT MATTER ===== */}
       <section id="outcomes" className="dxy-section">
         <div className="dxy-container">
           <div className="max-w-[760px]">
             <p className="dxy-kicker">Outcomes that matter</p>
             <h2 className="dxy-heading mt-4">
-              Higher accuracy. Lower effort. Faster turnaround. Audit-ready.
+              Higher accuracy. Lower effort. Faster turnaround.
+              Audit-ready.
             </h2>
           </div>
 
@@ -291,11 +369,7 @@ export function HomeBody() {
                       stroke="currentColor"
                       strokeWidth={2}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 13l4 4L19 7"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <span className="text-[17px] leading-7 text-[color:var(--dxy-ink)]">
@@ -308,7 +382,7 @@ export function HomeBody() {
         </div>
       </section>
 
-      {/* ===== 5. SERVICE OFFERS ===== */}
+      {/* ===== 6. SERVICE OFFERS ===== */}
       <section
         id="services"
         className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45"
@@ -373,7 +447,7 @@ export function HomeBody() {
         </div>
       </section>
 
-      {/* ===== 6. TESTIMONIALS ===== */}
+      {/* ===== 7. TESTIMONIALS ===== */}
       <section className="dxy-section">
         <div className="dxy-container">
           <div className="max-w-[720px]">
@@ -434,7 +508,7 @@ export function HomeBody() {
         </div>
       </section>
 
-      {/* ===== 7. HOW IT WORKS ===== */}
+      {/* ===== 8. HOW IT WORKS ===== */}
       <section
         id="how-it-works"
         className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45"
@@ -480,26 +554,10 @@ export function HomeBody() {
         </div>
       </section>
 
-      {/* ===== 8. DELIVERY MODEL ===== */}
-      <section className="dxy-section">
-        <div className="dxy-container">
-          <div className="max-w-[720px] text-center mx-auto">
-            <p className="dxy-kicker">Delivery model</p>
-            <h2 className="dxy-heading mt-4">
-              Focused team, direct delivery
-            </h2>
-            <p className="mt-5 max-w-[600px] mx-auto text-[17px] leading-8 text-[color:var(--dxy-muted)] sm:text-lg">
-              You work with a focused DeltaXY team that combines document AI
-              engineering, workflow design, and domain-aware validation.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ===== 9. WHY DELTAXY ===== */}
       <section
         id="why-deltaxy"
-        className="dxy-section border-y border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/65"
+        className="dxy-section border-b border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/65"
       >
         <div className="dxy-container">
           <div className="max-w-[820px]">
@@ -507,6 +565,12 @@ export function HomeBody() {
             <h2 className="dxy-heading mt-4">
               Most vendors optimize model output. We optimize business outcomes.
             </h2>
+            <p className="mt-4 text-[17px] leading-8 text-[color:var(--dxy-muted)]">
+              You work with a focused DeltaXY team that combines document AI
+              engineering, workflow design, and domain-aware validation.
+              We scale only when outcomes are measured and verified — if we don't
+              create measurable value, you shouldn't continue.
+            </p>
           </div>
 
           <div
@@ -528,11 +592,7 @@ export function HomeBody() {
                   stroke="currentColor"
                   strokeWidth={2}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-[16px] leading-7 text-[color:var(--dxy-ink)]">
                   {bullet}
@@ -543,25 +603,10 @@ export function HomeBody() {
         </div>
       </section>
 
-      {/* ===== 10. COMMERCIAL PRINCIPLE ===== */}
-      <section className="dxy-section">
-        <div className="dxy-container">
-          <div className="mx-auto max-w-[760px] text-center">
-            <h2 className="font-serif text-[clamp(2rem,4vw,3.25rem)] leading-[1.05] text-[color:var(--dxy-ink)]">
-              Earned Expansion
-            </h2>
-            <p className="mx-auto mt-5 max-w-[580px] text-[17px] leading-8 text-[color:var(--dxy-muted)] sm:text-lg">
-              We scale only when outcomes are measured and verified. If we do
-              not create measurable value, you should not continue.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== 11. BOOK A MEETING (FINAL CTA) ===== */}
+      {/* ===== 10. FINAL CTA ===== */}
       <section
         id="contact"
-        className="dxy-section border-t border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)]/45"
+        className="dxy-section"
       >
         <div className="dxy-container">
           <div className="mx-auto max-w-[880px] rounded-[28px] border border-[color:var(--dxy-border)] bg-[color:var(--dxy-card)] px-7 py-10 text-center shadow-[0_8px_24px_rgba(58,53,48,0.04)] sm:px-12 sm:py-14">
