@@ -18,14 +18,14 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "aviation-leasing-document-workflows",
     category: "Aviation leasing",
-    title: "How aviation leasing teams reduce manual review in document workflows",
+    title:
+      "How aviation leasing teams reduce manual review in document workflows",
     excerpt:
       "What actually slows teams down is rarely the PDF itself. It is the checking, comparison, and spreadsheet work around it.",
     date: "2026-03-31",
     readTime: "6 min read",
     featured: true,
-    seoTitle:
-      "Aviation leasing document workflows | DeltaXY blog",
+    seoTitle: "Aviation leasing document workflows | DeltaXY blog",
     seoDescription:
       "How aviation leasing teams reduce manual review in document-heavy workflows without adding new operational uncertainty.",
     sections: [

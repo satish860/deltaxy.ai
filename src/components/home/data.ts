@@ -9,5 +9,28 @@ const heroMetrics = [
   "500+ DORA requirements mapped",
 ];
 
+export const mertircs = [
+  {
+    value: "95%",
+    description: "Extraction accuracy"
+  },
+  {
+    value: "40+ hours",
+    description: "Saved per week"
+  },
+  {
+    value: "10,000+",
+    description: "Documents processed"
+  },
+  {
+    value: "6 weeks",
+    description: "To production"
+  },
+  // {
+  //   value: "500+",
+  //   description: "DORA requirements mapped"
+  // }
+]
+
 export { workingSessionMailto };
 export { heroMetrics };

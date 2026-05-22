@@ -239,7 +239,7 @@ function SubpageNav() {
   );
 }
 
-export function Nav() {
+export function Navbar() {
   const pathname = usePathname();
   const isBrandPage = pathname === "/" || pathname === "/privacy" || pathname.startsWith("/blog");
 

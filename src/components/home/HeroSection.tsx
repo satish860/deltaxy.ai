@@ -1,54 +1,31 @@
-import { heroMetrics } from "./data";
+import { ArrowRight } from "lucide-react";
+import { LogosSection } from "./LogosSection";
+import { workingSessionMailto } from "./data";
 
 export function HeroSection() {
-  const workingSessionMailto =
-    "mailto:satish@deltaxy.ai?subject=Executive%20Working%20Session%20%E2%80%94%20DeltaXY&body=Hi%2C%0A%0AI'd%20like%20to%20request%20an%20Executive%20Working%20Session%20with%20DeltaXY%20to%20discuss%20our%20document%20workflows.%0A%0A- Company%3A%0A- Workflow%20description%3A%0A- Preferred%20meeting%20time%3A%0A";
-
   return (
-    <section className="dxy-hero">
-      <div className="dxy-container">
-        <div className="mx-auto max-w-[760px] text-center">
-          <h1 className="dxy-display mt-6 dxy-fade-up dxy-fade-up-1">
-            Outcome Engineering for Regulated,
-            <br className="hidden sm:block" />
-            <br className="sm:hidden" />
-            Document-Heavy Operations
+    <section className="flex flex-col items-center justify-between h-[90vh] w-full">
+      <div className="h-11/12 flex items-center">
+        <div className="mx-auto max-w-4xl flex flex-col items-center text-center gap-8">
+          <h1 className="font-boldonse leading-relaxed text-5xl dxy-fade-up dxy-fade-up-2">
+            Outcome Engineering for Regulated, Document-Heavy Operations
           </h1>
-          <p className="dxy-lead mt-6 dxy-fade-up dxy-fade-up-2">
+          <p className="dxy-fade-up dxy-fade-up-2">
             Most enterprise AI efforts fail in production — not because
             models are weak, but because workflows are not engineered
             for accuracy, controls, and adoption.
           </p>
 
-          <div className="mt-10 dxy-fade-up dxy-fade-up-3">
-            <a
-              href={workingSessionMailto}
-              className="dxy-button dxy-fade-up dxy-fade-up-3"
-              aria-label="Request an Executive Working Session by email"
-            >
-              Request an Executive Working Session
-            </a>
-          </div>
-
-          <p className="mx-auto mt-5 max-w-[620px] text-sm leading-7 text-[color:var(--dxy-muted)] sm:text-[15px] dxy-fade-up dxy-fade-up-4">
-            You'll meet directly with DeltaXY leadership. No generic sales
-            process.
-          </p>
+          <a href={workingSessionMailto} className="bg-background h-10 rounded-sm flex items-center w-40 justify-between px-1 uppercase text-sm font-semibold border">
+            <span className="flex-1">Book a call</span>
+            <span className="h-8 w-8 flex items-center justify-center bg-dxy-primary rounded-sm">
+              <ArrowRight className="size-4 text-dxy-paper" strokeWidth={1.5} />
+            </span>
+          </a>
         </div>
-
-        <div className="mt-10 sm:mt-12 grid gap-px overflow-hidden rounded-[20px] border border-[color:var(--dxy-border)] bg-[color:var(--dxy-border)] sm:grid-cols-2 lg:grid-cols-5">
-          {heroMetrics.map((metric, i) => (
-            <div
-              key={metric}
-              className={
-                "bg-[color:var(--dxy-card)] px-4 py-4 sm:px-5 sm:py-5 text-center text-xs sm:text-sm font-medium text-[color:var(--dxy-ink)]/88 " +
-                `dxy-fade-up dxy-fade-up-${Math.min(i + 2, 6)}`
-              }
-            >
-              {metric}
-            </div>
-          ))}
-        </div>
+      </div>
+      <div className="w-full">
+        <LogosSection />
       </div>
     </section>
   );
