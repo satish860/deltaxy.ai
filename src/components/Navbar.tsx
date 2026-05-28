@@ -241,7 +241,11 @@ function SubpageNav() {
 
 export function Navbar() {
   const pathname = usePathname();
-  const isBrandPage = pathname === "/" || pathname === "/privacy" || pathname.startsWith("/blog");
+  const isBrandPage =
+    pathname === "/" ||
+    pathname === "/privacy" ||
+    pathname === "/terms-of-service" ||
+    pathname.startsWith("/blog");
 
   return isBrandPage ? <BrandNav /> : <SubpageNav />;
 }

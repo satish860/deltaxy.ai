@@ -42,7 +42,10 @@ function useInView<T extends HTMLElement>(
 export function Footer() {
   const pathname = usePathname();
   const isBrandPage =
-    pathname === "/" || pathname === "/privacy" || pathname.startsWith("/blog");
+    pathname === "/" ||
+    pathname === "/privacy" ||
+    pathname === "/terms-of-service" ||
+    pathname.startsWith("/blog");
 
   const { ref, inView } = useInView<HTMLElement>(0.25, "0px 0px -25% 0px");
 
@@ -195,7 +198,7 @@ export function Footer() {
                 <ul className="flex gap-4">
                   <li className="text-dxy-paper text-xs uppercase">
                     <Link
-                      href="/privacy-policy"
+                      href="/privacy"
                       className="transition-colors duration-300 hover:text-dxy-paper/70"
                     >
                       Privacy Policy
