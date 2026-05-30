@@ -69,12 +69,12 @@ export function Footer() {
     <div className="md:h-screen pb-3 md:pb-10">
       <footer
         ref={ref}
-        className="bg-dxy-primary w-[95%] mx-auto h-full rounded-[40px] flex flex-col items-center justify-center relative overflow-hidden min-h-screen md:min-h-auto"
+        className="bg-dxy-primary w-[95%] mx-auto h-full rounded-[40px] flex flex-col items-center justify-center relative overflow-hidden min-h-screen md:min-h-auto px-2 pt-10 pb-6 md:p-0"
       >
-        <div className="w-11/12 flex flex-col items-center justify-between md:h-10/12">
-          <div className="text-center max-w-lg flex flex-col items-center gap-4">
+        <div className="w-11/12 flex flex-col gap-6 md:gap-0 items-center justify-between md:h-10/12">
+          <div className="text-center md:max-w-lg flex flex-col items-center gap-4">
             <h2
-              className="text-2xl font-news-reader text-dxy-paper leading-relaxed"
+              className="text-sm md:text-2xl font-boldonse text-dxy-paper leading-relaxed"
               style={reveal(0)}
             >
               Tell us about your document workflows, constraints, and goals.
@@ -122,7 +122,7 @@ export function Footer() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-2 gap-10 md:w-1/2">
                 <div className="space-y-5" style={reveal(460)}>
-                  <h3 className="text-dxy-paper text-xs font-news-reader">
+                  <h3 className="text-dxy-paper text-xs font-boldonse">
                     Company
                   </h3>
                   <ul className="text-dxy-paper/80 text-xs font-medium flex flex-col gap-3 uppercase">
@@ -150,7 +150,7 @@ export function Footer() {
                   </ul>
                 </div>
                 <div className="space-y-5" style={reveal(520)}>
-                  <h3 className="text-dxy-paper text-xs font-news-reader">
+                  <h3 className="text-dxy-paper text-xs font-boldonse">
                     Socials
                   </h3>
                   <ul className="text-dxy-paper/80 text-xs font-medium flex flex-col gap-3 uppercase">
@@ -185,7 +185,7 @@ export function Footer() {
               </div>
             </div>
             <div
-              className="flex flex-col md:flex-row md:items-center justify-between"
+              className="flex flex-col gap-4 md:gap-0 md:flex-row md:items-center justify-between"
               style={reveal(820)}
             >
               <p className="text-dxy-paper text-xs uppercase font-thin">
@@ -194,26 +194,24 @@ export function Footer() {
                 reserved
               </p>
 
-              <div className="flex gap-4">
-                <ul className="flex gap-4">
-                  <li className="text-dxy-paper text-xs uppercase">
-                    <Link
-                      href="/privacy"
-                      className="transition-colors duration-300 hover:text-dxy-paper/70"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li className="text-dxy-paper text-xs uppercase">
-                    <Link
-                      href="/terms-of-service"
-                      className="transition-colors duration-300 hover:text-dxy-paper/70"
-                    >
-                      Terms of Service
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <ul className="flex md:gap-6 justify-between md:justify-center md:w-auto w-full">
+                <li className="text-dxy-paper text-xs uppercase">
+                  <Link
+                    href="/privacy"
+                    className="transition-colors duration-300 hover:text-dxy-paper/70"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li className="text-dxy-paper text-xs uppercase">
+                  <Link
+                    href="/terms-of-service"
+                    className="transition-colors duration-300 hover:text-dxy-paper/70"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

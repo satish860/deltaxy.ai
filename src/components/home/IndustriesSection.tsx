@@ -90,9 +90,9 @@ export function IndustriesSection() {
       id="industries"
       className="py-24"
     >
-      <div className="w-[85%] mx-auto grid grid-cols-12 gap-16">
+      <div className="w-[90%] md:w-[85%] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
         {/* Header */}
-        <div className="max-w-[760px] mb-12 sm:mb-16 col-span-12 lg:col-span-5 lg:sticky lg:top-20 lg:self-start">
+        <div className="col-span-1 md:col-span-5 lg:col-span-5 lg:sticky lg:top-20 lg:self-start">
           {/* <h3 className="mb-6 text-sm uppercase font-semibold text-dxy-muted tracking-wider">
             Who we serve
           </h3> */}
@@ -106,7 +106,7 @@ export function IndustriesSection() {
             <WaveMark className="h-2.5 w-7 text-dxy-primary" />
             <span>Who we serve</span>
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl leading-relaxed font-boldonse">
+          <h2 className="text-xl md:text-4xl leading-relaxed font-boldonse">
             AI workflows, built for{" "}
             <span className="text-dxy-primary">your industry.</span>
           </h2>
@@ -118,7 +118,7 @@ export function IndustriesSection() {
         </div>
 
         {/* Sticky stack */}
-        <div className="col-span-12 lg:col-span-7">
+        <div className="col-span-1 md:col-span-7 lg:col-span-7">
           {industries.map((c, i) => (
             <div
               key={c.href}
@@ -130,7 +130,7 @@ export function IndustriesSection() {
               }}
             >
               <article
-                className={`relative grid grid-cols-1  gap-8 lg:gap-10 rounded-[28px] p-10 overflow-hidden shadow-[0_30px_80px_-25px_rgba(58,53,48,0.2)] ${i === 1 ? 'bg-dxy-primary text-dxy-paper' : 'bg-dxy-paper'}`}
+                className={`relative grid grid-cols-1 gap-8 lg:gap-10 rounded-[28px] p-6 md:p-10 overflow-hidden shadow-[0_30px_80px_-25px_rgba(58,53,48,0.2)] ${i === 1 ? 'bg-dxy-primary text-dxy-paper' : 'bg-dxy-paper'}`}
                 style={{ minHeight: "min(450px, 75vh)" }}
               >
                 {/* Left content */}

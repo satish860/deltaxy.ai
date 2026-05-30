@@ -95,9 +95,9 @@ const arrowVariants: Variants = {
 export function ServicesSection() {
   return (
     <section id="services" className="py-24">
-      <div className="w-[85%] mx-auto space-y-24">
+      <div className="w-[90%] md:w-[85%] mx-auto space-y-12 md:space-y-24">
         {/* Header */}
-        <div className="flex items-start gap-32">
+        <div className="flex flex-col md:flex-row items-start gap-12 md:gap-32">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +114,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-3xl leading-[1.15] tracking-tight"
+            className="text-2xl md:text-3xl leading-[1.15] tracking-tight"
           >
             <span className="text-dxy-muted font-light">Three tiers, designed to </span>
             <span className="font-bold text-dxy-ink">prove value before scale.</span>
@@ -136,7 +136,7 @@ export function ServicesSection() {
                 key={s.number}
                 variants={cardVariants}
                 whileHover={{ y: -6, transition: { duration: 0.3, ease: "easeOut" } }}
-                className={`relative flex flex-col rounded-[24px] p-8 lg:p-9 overflow-hidden ${isLast
+                className={`relative flex flex-col rounded-[24px] p-6 lg:p-9 overflow-hidden ${isLast
                   ? "bg-dxy-primary text-dxy-paper shadow-[0_30px_80px_-25px_rgba(58,53,48,0.35)]"
                   : "bg-dxy-paper text-dxy-ink border border-dxy-border"
                   }`}

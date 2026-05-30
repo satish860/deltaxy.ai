@@ -146,7 +146,7 @@ function DocMock() {
 export function ProductsSection() {
   return (
     <section id="products" className="py-24">
-      <div className="w-[85%] mx-auto flex flex-col gap-12">
+      <div className="w-[90%] md:w-[85%] mx-auto flex flex-col gap-12">
         {/* Header */}
         <div className="max-w-[820px]">
           <motion.div
@@ -165,7 +165,7 @@ export function ProductsSection() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={fadeUp}
-            className="text-3xl sm:text-4xl leading-relaxed font-boldonse"
+            className="text-2xl md:text-4xl leading-relaxed font-boldonse"
           >
             Tools we ship,{" "}
             <span className="text-dxy-primary">after we prove it.</span>
@@ -189,7 +189,7 @@ export function ProductsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25, margin: "0px 0px -20% 0px" }}
-          className="relative rounded-[32px] bg-dxy-primary text-dxy-paper p-7 sm:p-10 overflow-hidden shadow-[0_30px_80px_-25px_rgba(58,53,48,0.35)]"
+          className="relative rounded-[32px] bg-dxy-primary text-dxy-paper p-6 md:p-10 overflow-hidden shadow-[0_30px_80px_-25px_rgba(58,53,48,0.35)]"
         >
           {/* Meta strip */}
           <motion.div
@@ -203,7 +203,7 @@ export function ProductsSection() {
                 v1.0
               </span>
             </div>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dxy-paper/15 text-[11px] font-semibold uppercase tracking-[0.14em]">
+            {/* <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dxy-paper/15 text-[11px] font-semibold uppercase tracking-[0.14em]">
               <motion.span
                 aria-hidden
                 className="h-1.5 w-1.5 rounded-full bg-dxy-paper"
@@ -211,13 +211,13 @@ export function ProductsSection() {
                 transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
               />
               Open Source
-            </span>
+            </span> */}
           </motion.div>
 
           {/* Split visual */}
           <motion.div
             variants={innerFade}
-            className="relative rounded-[20px] bg-dxy-paper/5 border border-dxy-paper/10 p-4 sm:p-6 mb-10"
+            className="relative rounded-[20px] bg-dxy-paper/5 border border-dxy-paper/10 p-4 md:p-6 mb-10"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               <SheetMock />

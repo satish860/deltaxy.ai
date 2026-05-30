@@ -41,7 +41,7 @@ export function HeroMetrics() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="grid w-full grid-cols-2 gap-y-10 sm:gap-12 lg:grid-cols-4"
+      className="grid w-full grid-cols-1 md:grid-cols-2 gap-y-12 lg:grid-cols-4"
     >
       {mertircs.map((metric, i) => {
         const Icon = metricIcons[i];
@@ -49,16 +49,16 @@ export function HeroMetrics() {
           <motion.div
             key={metric.value}
             variants={itemVariants}
-            className="flex flex-col items-center text-center"
+            className="flex flex-col md:items-center text-center"
           >
-            <h2 className="text-4xl font-bold tracking-tight text-dxy-ink leading-none">
+            <h2 className="inline-flex text-2xl md:text-4xl font-bold tracking-tight text-dxy-ink leading-none">
               {metric.value}
             </h2>
-            <div className="mt-4 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-dxy-muted">
+            <div className="mt-3 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-dxy-muted">
               {Icon ? (
                 <motion.span variants={iconVariants} className="inline-flex">
                   <Icon
-                    className="size-3 text-dxy-primary shrink-0"
+                    className="size-3 text-dxy-primary shrink-0 "
                     strokeWidth={1.75}
                     aria-hidden
                   />

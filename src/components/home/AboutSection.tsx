@@ -46,9 +46,9 @@ const phraseFade: Variants = {
 export function AboutSection() {
   return (
     <section id="about" className="py-24">
-      <div className="w-[85%] mx-auto">
+      <div className="w-[90%] md:w-[85%] mx-auto">
         {/* About + bio */}
-        <div className="flex items-start gap-32">
+        <div className="flex flex-col md:flex-row items-start gap-12 md:gap-32">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -60,13 +60,13 @@ export function AboutSection() {
             <span>About</span>
           </motion.div>
 
-          <div className="col-span-12 lg:col-span-10 space-y-24">
+          <div className="col-span-12 lg:col-span-10 space-y-12 md:space-y-24">
             <motion.h2
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
               variants={headingContainer}
-              className="text-3xl leading-[1.15] tracking-tight"
+              className="text-xl md:text-3xl leading-[1.3] tracking-tight"
             >
               <motion.span variants={phraseFade} className="text-dxy-muted font-light">
                 We engineer AI workflows for{" "}

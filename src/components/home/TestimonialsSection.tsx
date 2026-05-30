@@ -88,7 +88,7 @@ const quoteIconVariants: Variants = {
 export function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-24">
-      <div className="w-[85%] mx-auto">
+      <div className="w-[90%] md:w-[85%] mx-auto">
         <div className="max-w-[720px] mb-10 sm:mb-12 gap-3">
           <motion.div
             initial="hidden"

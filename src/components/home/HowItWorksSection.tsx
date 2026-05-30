@@ -104,7 +104,7 @@ export function HowItWorksSection() {
       id="how-it-works"
       className="py-24"
     >
-      <div className="w-[85%] mx-auto">
+      <div className="w-[90%] md:w-[85%] mx-auto">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:gap-12 lg:gap-24">
           {/* Sticky left intro */}
           <div className="md:sticky md:top-32 md:self-start flex flex-col gap-3">
@@ -119,9 +119,9 @@ export function HowItWorksSection() {
               className="flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-dxy-ink mb-10"
             >
               <WaveMark className="h-2.5 w-7 text-dxy-primary" />
-              <span>Who we serve</span>
+              <span>How it works</span>
             </motion.div>
-            <h2 className="text-3xl leading-relaxed font-boldonse">
+            <h2 className="text-2xl md:text-3xl leading-relaxed font-boldonse">
               <span>A proven &amp; effective </span>
               <span className="text-dxy-primary">workflow process.</span>
             </h2>

@@ -15,9 +15,9 @@ export function WhyDeltaxySection() {
 
   return (
     <section id="why-deltaxy" className="py-24">
-      <div className="w-[85%] mx-auto flex flex-col gap-12">
+      <div className="w-[90%] md:w-[85%] mx-auto flex flex-col gap-12">
         {/* Header */}
-        <div className="max-w-[820px]">
+        <div className="">
           {/* <h3 className="mb-6 text-sm uppercase font-semibold text-dxy-muted tracking-wider">
             Why DeltaXY
           </h3> */}
@@ -31,7 +31,7 @@ export function WhyDeltaxySection() {
             <WaveMark className="h-2.5 w-7 text-dxy-primary" />
             <span>Why DeltaXY</span>
           </motion.div>
-          <h2 className="text-2xl sm:text-3xl leading-snug font-boldonse">
+          <h2 className="text-2xl md:text-3xl leading-snug font-boldonse">
             We optimize{" "}
             <span className="text-dxy-primary">business outcomes.</span>
           </h2>
@@ -55,7 +55,7 @@ export function WhyDeltaxySection() {
                 const isFirstCol = col === 0;
 
                 const cls = [
-                  "group relative flex items-start gap-5 sm:gap-7 p-6 sm:p-9 transition-colors duration-300 hover:bg-dxy-accent-light/25",
+                  "group relative flex items-center md:items-start justify-center md:items-start gap-5 sm:gap-7 p-6 sm:p-9 transition-colors duration-300 hover:bg-dxy-accent-light/25",
                   !isLast && "border-b border-dxy-border",
                   isLastRow && "md:border-b-0",
                   isFirstCol && "md:border-r md:border-dxy-border",
@@ -71,11 +71,11 @@ export function WhyDeltaxySection() {
                       className="absolute left-0 top-1/2 -translate-y-1/2 h-0 w-[3px] bg-dxy-primary transition-all duration-500 group-hover:h-[60%]"
                     />
 
-                    <span className="text-3xl sm:text-4xl font-boldonse text-dxy-primary/25 group-hover:text-dxy-primary transition-colors duration-300 leading-none shrink-0 tabular-nums w-14 sm:w-16">
+                    <span className="text-3xl md:text-4xl font-boldonse text-dxy-primary/25 group-hover:text-dxy-primary transition-colors duration-300 leading-none shrink-0 tabular-nums w-14 md:w-16">
                       {String(i + 1).padStart(2, "0")}
                     </span>
 
-                    <p className="text-[15px] sm:text-base leading-7 text-dxy-ink pt-1 transition-transform duration-300 group-hover:translate-x-1">
+                    <p className="text-[15px] md:text-base leading-relaxed text-dxy-ink transition-transform duration-300 group-hover:translate-x-1">
                       {principle}
                     </p>
 
