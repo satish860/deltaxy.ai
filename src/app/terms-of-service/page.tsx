@@ -34,7 +34,7 @@ export default function TermsOfServicePage() {
           </p>
         </section>
 
-        <section className="py-12 px-6">
+        <section className="py-12 md:px-6">
           <div className="space-y-12">
             <Clause
               number="1"

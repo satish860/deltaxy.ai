@@ -33,7 +33,7 @@ export function HeroSection() {
         >
           <motion.h1
             variants={fadeUp}
-            className="font-black leading-20 text-xl md:text-7xl"
+            className="font-black md:leading-20 text-3xl md:text-7xl"
           >
             Outcome Engineering for Regulated, Document-Heavy Operations
           </motion.h1>

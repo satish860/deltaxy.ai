@@ -69,7 +69,7 @@ export function Footer() {
     <div className="md:h-screen pb-3 md:pb-10">
       <footer
         ref={ref}
-        className="bg-dxy-primary w-[95%] mx-auto h-full rounded-[40px] flex flex-col items-center justify-center relative overflow-hidden min-h-screen md:min-h-auto px-2 pt-10 pb-6 md:p-0"
+        className="bg-dxy-primary w-[95%] mx-auto h-full rounded-[40px] flex flex-col items-center justify-center relative overflow-hidden min-h-screen md:min-h-auto px-2 pt-10 pb-4 md:p-0"
       >
         <div className="w-11/12 flex flex-col gap-6 md:gap-0 items-center justify-between md:h-10/12">
           <div className="text-center md:max-w-lg flex flex-col items-center gap-4">
