@@ -8,9 +8,9 @@ import { Logo } from './Logo'
 import { workingSessionMailto } from './home/data'
 
 const navLinks = [
+    { href: '/#industries', label: 'Industries' },
     { href: '/#services', label: 'Services' },
     { href: '/#products', label: 'Products' },
-    { href: '/#industries', label: 'Industries' },
     { href: '/#testimonials', label: 'Testimonials' },
     { href: '/#how-it-works', label: 'How it works' },
 ]

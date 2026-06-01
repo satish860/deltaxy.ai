@@ -156,14 +156,14 @@ export function Footer() {
                   <ul className="text-dxy-paper/80 text-xs font-medium flex flex-col gap-3 uppercase">
                     {[
                       {
-                        href: "https://www.linkedin.com/company/deltaxy-ai/",
+                        href: "https://www.linkedin.com/company/deltaxy",
                         label: "LinkedIn",
                       },
-                      { href: "https://x.com/deltaxy_ai", label: "X" },
-                      {
-                        href: "https://www.youtube.com/@deltaxyai",
-                        label: "YouTube",
-                      },
+                      // { href: "https://x.com/deltaxy_ai", label: "X" },
+                      // {
+                      //   href: "https://www.youtube.com/@deltaxyai",
+                      //   label: "YouTube",
+                      // },
                     ].map((l, i) => (
                       <li
                         key={l.label}
