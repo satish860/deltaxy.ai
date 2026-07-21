@@ -5,15 +5,29 @@ import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import { WaveMark } from "./AboutSection";
 
-const roadmap = [
+type RoadmapItem = {
+  index: string;
+  category: string;
+  eta: string;
+  notifySubject?: string;
+  href?: string;
+};
+
+const roadmap: RoadmapItem[] = [
   {
     index: "02",
+    category: "Accounting",
+    eta: "Live · ekCell",
+    href: "https://www.ekcell.ai/home",
+  },
+  {
+    index: "03",
     category: "Compliance ops",
     eta: "Drafting · 2026",
     notifySubject: "Notify me — Compliance product",
   },
   {
-    index: "03",
+    index: "04",
     category: "Aviation ops",
     eta: "Concept · 2026",
     notifySubject: "Notify me — Aviation product",
@@ -306,10 +320,24 @@ export function ProductsSection() {
             <motion.div
               key={s.index}
               variants={shelfItem}
-              className="group rounded-[20px] border border-dashed border-dxy-border bg-dxy-accent-light/5 p-5 flex items-start gap-4 hover:bg-dxy-accent-light/10 transition-colors"
+              className={
+                s.href
+                  ? "group rounded-[20px] bg-dxy-paper border border-dxy-border p-5 flex items-start gap-4"
+                  : "group rounded-[20px] border border-dashed border-dxy-border bg-dxy-accent-light/5 p-5 flex items-start gap-4 hover:bg-dxy-accent-light/10 transition-colors"
+              }
             >
-              <div className="h-9 w-9 shrink-0 rounded-full border border-dashed border-dxy-border bg-dxy-paper/60 text-dxy-muted flex items-center justify-center group-hover:border-dxy-primary/40 group-hover:text-dxy-primary transition-colors">
-                <Lock className="size-3.5" strokeWidth={2} />
+              <div
+                className={
+                  s.href
+                    ? "h-9 w-9 shrink-0 rounded-full bg-dxy-primary text-dxy-paper flex items-center justify-center"
+                    : "h-9 w-9 shrink-0 rounded-full border border-dashed border-dxy-border bg-dxy-paper/60 text-dxy-muted flex items-center justify-center group-hover:border-dxy-primary/40 group-hover:text-dxy-primary transition-colors"
+                }
+              >
+                {s.href ? (
+                  <Check className="size-4" strokeWidth={2.25} />
+                ) : (
+                  <Lock className="size-3.5" strokeWidth={2} />
+                )}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2.5">
@@ -321,12 +349,23 @@ export function ProductsSection() {
                   </span>
                 </div>
                 <p className="text-xs text-dxy-muted mt-1.5">{s.eta}</p>
-                <Link
-                  href={`mailto:satish@deltaxy.ai?subject=${encodeURIComponent(s.notifySubject)}`}
-                  className="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold text-dxy-primary hover:text-dxy-sage transition-colors"
-                >
-                  Notify me <span aria-hidden>→</span>
-                </Link>
+                {s.href ? (
+                  <Link
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold text-dxy-primary hover:text-dxy-sage transition-colors"
+                  >
+                    Visit site <span aria-hidden>→</span>
+                  </Link>
+                ) : (
+                  <Link
+                    href={`mailto:satish@deltaxy.ai?subject=${encodeURIComponent(s.notifySubject ?? "")}`}
+                    className="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold text-dxy-primary hover:text-dxy-sage transition-colors"
+                  >
+                    Notify me <span aria-hidden>→</span>
+                  </Link>
+                )}
               </div>
             </motion.div>
           ))}
